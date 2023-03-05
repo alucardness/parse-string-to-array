@@ -37,6 +37,13 @@ foreach ($inputs as $input) {
     echo '<br/>';
 }
 
+/**
+ * Converts a string to an integer or float if it is numeric,
+ * otherwise trims any leading whitespace and removes any double quotes.
+ *
+ * @param string $string The string to be converted.
+ * @return int|float|string The converted value as an integer, float or string.
+ */
 function convertString($string)
 {
     $string = str_replace('"', '', $string, $count);
@@ -52,6 +59,13 @@ function convertString($string)
     return $isDouble !== false ? (float)$string : (int)$string;
 }
 
+/**
+ * Parses a string into an array, by removing any enclosing square brackets,
+ * splitting the string by commas, and converting each item to an integer if possible.
+ *
+ * @param string $string The string to be parsed.
+ * @return array An array containing the parsed values.
+ */
 function parseToArray($string)
 {
     $array = [];
